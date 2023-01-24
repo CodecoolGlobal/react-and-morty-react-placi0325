@@ -11,14 +11,14 @@ function App () {
 
   return (<div className="container">
     <Home />
-    {<div>
+    {/*<div>
       {characters && characters.results.map((char)=>
             (<div>{char.name}</div>))}
     </div>}
     {<div>
       {locations && locations.results.map((char)=>
             (<div>{char.name}</div>))}
-      </div>}
+      </div>*/}
   </div>)
 }         
 
