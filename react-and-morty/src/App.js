@@ -9,11 +9,10 @@ function App () {
   
 
   return (<>
-    <div className="App">Take a look at the console! (F12)</div>
-    {/* <div>
-      {characters.results.map((char)=>
+    {<div>
+      {characters && characters.results.map((char)=>
             (<div>{char.name}</div>))}
-    </div> */}
+    </div>}
   </>)
 }         
 

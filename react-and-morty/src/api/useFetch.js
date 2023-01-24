@@ -10,7 +10,6 @@ export const useFetch = (starterUrl, pageNumber) => {
             const response = await fetch(url+pageNumber);
             const actualData = await response.json();
             setData(actualData);
-            //console.log(data)
             setLoadingState(false);
         }
         getData();
