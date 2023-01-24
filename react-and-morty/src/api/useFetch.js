@@ -1,22 +1,18 @@
 import React, { useState, useEffect } from "react";
 
-/**
-     Fetch data from the given url. If it can't get any data from the url, than it writes a message into the console.
-     *
-     * @param initUrl string that gives the route that the function fetch data from.
-     */
-export const useFetch = (initUrl) => {
-  const [url, setUrl] = useState(initUrl);
-  const [data, setData] = useState(undefined);
+export const useFetch = (starterUrl, pageNumber) => {
+    const [url, setUrl] = useState(starterUrl);
+    const [loadingState, setLoadingState] = useState(true);
+    const [data, setData] = useState(undefined);
 
-  useEffect(() => {
-    fetch(url)
-      .then((response) => {
-        if (response.status !== 200) return "There must be a problem";
-        return response.json();
-      })
-      .then((json) => setData(json));
-  }, [url]);
-
-  return [data, setUrl];
-};
+    useEffect(()=> {
+        const getData = async() => {
+            const response = await fetch(url+pageNumber);
+            const actualData = await response.json();
+            setData(actualData);
+            setLoadingState(false);
+        }
+        getData();
+    },[url,pageNumber])
+    return [data, setUrl]
+}
