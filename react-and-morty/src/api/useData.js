@@ -2,4 +2,12 @@ import React, { useEffect } from "react";
 import { useFetch } from "./useFetch.js";
 import { mainUrls } from "./dataRoutes.js";
 
+export const useCharacters = async(pageNumber) => {
+    let characters = await useFetch(mainUrls.characters,pageNumber)
+    return characters
+}
 
+export const useLocations = async(pageNumber) => {
+    let locations = await useFetch(mainUrls.locations,pageNumber)
+    return locations
+}
