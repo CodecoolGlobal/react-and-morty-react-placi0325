@@ -13,10 +13,10 @@ function App () {
       {characters && characters.results.map((char)=>
             (<div>{char.name}</div>))}
     </div>}
-    {/*<div>
+    {<div>
       {locations && locations.results.map((char)=>
             (<div>{char.name}</div>))}
-      </div>*/}
+      </div>}
   </div>)
 }         
 
