@@ -3,10 +3,10 @@ import { useFetch } from "./useFetch.js";
 import { mainUrls } from "./dataRoutes.js";
 
 export const useCharacters = (pageNumber) => {
-    const characters = useFetch(mainUrls.characters,pageNumber)
-    /*useEffect(()=>{
+    const [characters, setUrl] = useFetch(mainUrls.characters,pageNumber)
+    useEffect(()=>{
         setUrl(mainUrls.characters+pageNumber)
-    },[pageNumber])*/
+    },[pageNumber])
     return characters;
 }
 

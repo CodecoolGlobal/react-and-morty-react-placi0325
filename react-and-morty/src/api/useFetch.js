@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export const useFetch = async(starterUrl, pageNumber) => {
+export const useFetch = (starterUrl, pageNumber) => {
     const [url, setUrl] = useState(starterUrl);
     const [loadingState, setLoadingState] = useState(true);
     const [data, setData] = useState(undefined);
@@ -15,5 +15,5 @@ export const useFetch = async(starterUrl, pageNumber) => {
         }
         getData();
     },[url,pageNumber])
-    return data
+    return [data, setUrl]
 }
