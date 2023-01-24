@@ -4,10 +4,18 @@ body {
 
 .button {
     font-size: large;
-    background-color: #12B0C9;
+    background-color: black;
     border-radius: 1em;
     border-color: #D2E054;
+    color : #12B0C9;
+    padding: 5px 50px;
     border-width: 0.25em;
+    cursor: pointer;
+}
+
+.button:hover {
+    color : black;
+    background-color: #12B0C9;
 }
 
 .button-container {
