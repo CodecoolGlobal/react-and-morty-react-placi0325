@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
 import Home from "./components/Home";
-import Locations from "./components/Locations";
+import LocationList from "./components/LocationList";
 import CharacterList from "./components/CharacterList";
 
 function App () {
@@ -11,7 +11,7 @@ function App () {
   const contentOptions = {
     home: <Home setContent={setContent} />,
     characters: <CharacterList setContent={setContent} />,
-    locations: <Locations setContent={setContent} />,
+    locations: <LocationList setContent={setContent} />,
   };
 
   return (<div className="container">
