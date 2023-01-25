@@ -53,6 +53,7 @@ body {
     grid-gap: 20px;
     margin: auto;
     padding-top: 135px;
+    padding-bottom: 100px;
 }
 
 .characterListItem {
@@ -78,6 +79,7 @@ body {
     grid-gap: 20px;
     margin: auto;
     padding-top: 135px;
+    padding-bottom: 100px;
 }
 
 .locationListItem {
