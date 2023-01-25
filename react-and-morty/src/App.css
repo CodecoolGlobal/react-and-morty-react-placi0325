@@ -45,3 +45,14 @@ body {
 .logo {
     max-width: 50%;
 }
+
+.header {
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-logo {
+    width: 20%;
+}

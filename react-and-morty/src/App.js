@@ -3,6 +3,7 @@ import "./App.css";
 import { useCharacters, useLocations } from "./api/useData";
 import Home from "./components/Home";
 import Header from "./components/Header";
+import Locations from "./components/Locations";
 
 function App () {
   const characters = useCharacters(1);
@@ -15,12 +16,13 @@ function App () {
     <Home />
     {/*<div>
       {characters && characters.results.map((char)=>
+        (<div>{char.name}</div>))}
+        </div>}
+        {<div>
+          {locations && locations.results.map((char)=>
             (<div>{char.name}</div>))}
-    </div>}
-    {<div>
-      {locations && locations.results.map((char)=>
-            (<div>{char.name}</div>))}
-      </div>*/}
+          </div>*/}
+    <Locations/>
   </div>)
 }         
 
