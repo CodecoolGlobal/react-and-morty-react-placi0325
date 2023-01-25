@@ -2,11 +2,13 @@ import textlogo from '../img/textlogo.png'
 
 const Header = (props) => {
     return (
-        <div>
-            <img src={textlogo} alt='textlogo'></img>
-            <button>Home</button>
-            <button>Characters</button>
-            <button>Locations</button>
+        <div className='header'>
+            <img className='header-logo' src={textlogo} alt='textlogo'></img>
+            <div >
+                <button className='button'>Home</button>
+                <button className='button'>Characters</button>
+                <button className='button'>Locations</button>
+            </div>
         </div>
     )
 }

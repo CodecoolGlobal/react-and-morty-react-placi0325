@@ -70,3 +70,14 @@ body {
 .characterImage:hover {
     border: 5px solid #12B0C9;
 }
+
+.header {
+    position:fixed;
+    top: 0%;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.header-logo {
+    width: 20%;
+}
