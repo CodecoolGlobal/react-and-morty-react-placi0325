@@ -141,3 +141,17 @@ body {
 .locations {
     color : #12B0C9;
 }
+
+.pageSwitcher {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0%;
+    width: 100%;
+    color : #12B0C9;
+    font-size: large;
+    background-color: rgb(0, 0, 0);
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
