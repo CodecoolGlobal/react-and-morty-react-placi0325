@@ -77,7 +77,7 @@ body {
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 2fr 1.25fr;
-    background-color: rgba(0, 0, 0, 10%)
+    background-color: rgb(0, 0, 0)
     
 }
 
@@ -114,9 +114,21 @@ body {
 }
 
 .characterListContainer {
-    padding-top: 100px;
+    padding-top: 180px;
 }
 
 .locations {
     color : #12B0C9;
+}
+
+.pageSwitcher {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 18%;
+    width: 100%;
+    color : #12B0C9;
+    font-size: large;
+    background-color: rgb(0, 0, 0)
 }
