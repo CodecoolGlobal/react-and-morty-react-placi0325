@@ -10,7 +10,7 @@ const CharacterList = (props) => {
     const characters = useCharacters(characterPage);
     const content = <>
     <Header setContent={props.setContent}/>
-    <PageSwitcher setPage={setCharacterPage} pageNumber={characterPage} />
+    <PageSwitcher max={42} setPage={setCharacterPage} pageNumber={characterPage} />
     <div className="characterListContainer">
         {characters && characters.results.map((char)=>
             (<CharacterListItem character={char}/>))}
