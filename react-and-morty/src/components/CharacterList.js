@@ -5,7 +5,7 @@ import Header from "./Header";
 const CharacterList = (props) => {
     const characters = useCharacters(1);
     const content = <>
-    <Header />
+    <Header setContent={props.setContent}/>
     <div className="characterListContainer">
         {characters && characters.results.map((char)=>
             (<CharacterListItem character={char}/>))}
