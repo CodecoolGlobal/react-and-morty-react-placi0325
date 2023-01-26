@@ -42,11 +42,12 @@ const LocationCard = (props) => {
 
 
     const content = <>
-        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} />
+        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>
         <div className="locationCardContainer">
             <img className="locationCardImage" src={img} alt={props.location.name}></img>
             <div className="locationData">
                 <div className='locationName'>Name:&nbsp;{props.location.name}</div>
+                <div>Type:&nbsp;{props.location.type}</div>
                 <div className='locationDimension'>Dimension:&nbsp;{props.location.dimension}</div>
                 {/* <div className='residents'>Resident(s):&nbsp;{props.location.residents}</div> */}
             </div>

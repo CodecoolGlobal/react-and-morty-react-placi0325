@@ -14,7 +14,7 @@ const LocationList = (props) => {
 
     if (props.locationCondition === "allLocation") {
         return (<>
-            <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} />
+            <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition} />
             <PageSwitcher max={7} setPage={setLocationPage} pageNumber={locationPage} />
             <div className='locations'>
                 {data && data.results.map((location)=>(<LocationListItem location={location} setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>))}
@@ -23,7 +23,7 @@ const LocationList = (props) => {
     } else {
         
         console.log(singleLocation)
-        return <LocationCard setContent={props.setContent} location={singleLocation} setLocationCondition={props.setLocationCondition}/>
+        return <LocationCard setContent={props.setContent} location={singleLocation} setCharacterCondition={props.setCharacterCondition} setLocationCondition={props.setLocationCondition}/>
     }
     
 }

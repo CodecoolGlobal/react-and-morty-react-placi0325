@@ -184,3 +184,19 @@ body {
 .locationData {
     padding-top: 30px;
 }
+
+.characterCard {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: #12B0C9;
+    color:black;
+    padding: 5px;
+    border: 5px solid #D2E054;
+    border-radius: 1em;
+    font-size: large;
+}
