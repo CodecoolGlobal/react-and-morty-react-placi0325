@@ -20,8 +20,8 @@ const CharacterList = (props) => {
                 {characters && characters.results.map((char)=>(<CharacterListItem character={char} setContent={props.setContent} setCharacterCondition={props.setCharacterCondition}/>))}
             </div>
         </>)
-    } else {
-        console.log(singleCharacter)
+    } else if (singleCharacter.name) {
+        console.log("khkjhj",singleCharacter)
         return <CharacterCard setContent={props.setContent} character={singleCharacter} setCharacterCondition={props.setCharacterCondition}/>
     }
 
