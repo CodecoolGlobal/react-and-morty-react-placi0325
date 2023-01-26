@@ -5,8 +5,6 @@ import menagerie from '../img/menagerie.jpg'
 import resort from '../img/resort.webp'
 import tv from '../img/tv.jpg'
 import spacestation from '../img/spacestation.webp'
-import { useLocationCard } from "../api/useData";
-import { useState } from 'react';
 import Header from "./Header"
 
 const LocationCard = (props) => {
