@@ -8,20 +8,19 @@ import CharacterCard from "./CharacterCard"
 const CharacterList = (props) => {
     const [characterPage, setCharacterPage] = useState(1);
 
+    console.log("char cond.",props.characterCondition)
     let singleCharacter = useCharacterCard(props.characterCondition)
-    const characters = useCharacters(characterPage);
+    let characters = useCharacters(characterPage);
 
     if (props.characterCondition === "allCharacter") {
         return (<>
             <Header setContent={props.setContent}/>
             <PageSwitcher max={42} setPage={setCharacterPage} pageNumber={characterPage} />
             <div className="characterListContainer">
-                {characters && characters.results.map((char)=>
-                    (<CharacterListItem character={char} setContent={props.setContent} setCharacterCondition={props.setCharacterCondition}/>))}
+                {characters && characters.results.map((char)=>(<CharacterListItem character={char} setContent={props.setContent} setCharacterCondition={props.setCharacterCondition}/>))}
             </div>
         </>)
     } else {
-
         console.log(singleCharacter)
         return <CharacterCard setContent={props.setContent} character={singleCharacter} setCharacterCondition={props.setCharacterCondition}/>
     }

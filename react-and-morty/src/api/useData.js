@@ -29,6 +29,7 @@ export const useLocationCard = (id) => {
 export const useCharacterCard = (id) => {
     const [characterCard, setUrl] = useFetch(`https://rickandmortyapi.com/api/character/`+id)
     useEffect(()=>{
+        console.log('fetching id:',id)
         setUrl(`https://rickandmortyapi.com/api/character/`+id)
     },[id])
     return characterCard;

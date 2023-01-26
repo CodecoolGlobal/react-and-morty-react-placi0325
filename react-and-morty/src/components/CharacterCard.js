@@ -1,6 +1,7 @@
 import Header from "./Header"
 
 const CharacterCard = (props) => {
+    console.log('character card:',props.character)
 
     const content = <>
         <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>

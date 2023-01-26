@@ -7,15 +7,12 @@ import { useEffect, useState } from 'react';
 
 const LocationList = (props) => {
     const [locationPage, setLocationPage] = useState(1);
-    
 
-
-    let singleCharacter = useLocationCard(props.locationCondition)
-
-
+    console.log("loc cond.",props.locationCondition)
+    let singleLocation = useLocationCard(props.locationCondition)
     let data = useLocations(locationPage);
 
-    if (props.locationCondition === "allCharacter") {
+    if (props.locationCondition === "allLocation") {
         return (<>
             <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} />
             <PageSwitcher max={7} setPage={setLocationPage} pageNumber={locationPage} />
@@ -25,8 +22,8 @@ const LocationList = (props) => {
         </>)
     } else {
         
-        console.log(singleCharacter)
-        return <LocationCard setContent={props.setContent} location={singleCharacter} setLocationCondition={props.setLocationCondition}/>
+        console.log(singleLocation)
+        return <LocationCard setContent={props.setContent} location={singleLocation} setLocationCondition={props.setLocationCondition}/>
     }
     
 }

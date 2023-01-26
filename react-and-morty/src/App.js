@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import "./App.css";
-import { useCharacters, useLocations } from "./api/useData";
 import Home from "./components/Home";
 import LocationList from "./components/LocationList";
 import CharacterList from "./components/CharacterList";
-import LocationCard from "./components/LocationCard";
+
 
 function App () {
   const [content, setContent] = useState("home");
-  const [locationCondition, setLocationCondition] = useState("allCharacter")
+  const [locationCondition, setLocationCondition] = useState("allLocation")
   const [characterCondition, setCharacterCondition] = useState("allCharacter")
 
   const contentOptions = {
