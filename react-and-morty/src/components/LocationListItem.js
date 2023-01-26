@@ -38,7 +38,8 @@ const LocationListItem = (props) => {
     }
     const content = <div className='locationListItem'>
         <img className="locationImage" src={img} alt={props.location.name} onClick={() => {
-            props.setLocationCondition(props.location.id)
+            props.setLocationCondition([props.location.id, props.location.type, props.location.name, props.location.dimension])
+            props.setContent("locationCard");
             console.log(props.location.id)
             }}></img>
         <div className='locationName'>{props.location.name}</div>

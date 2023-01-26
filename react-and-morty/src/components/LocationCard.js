@@ -10,12 +10,12 @@ import { useState } from 'react';
 import Header from "./Header"
 
 const LocationCard = (props) => {
-
+    
     //let data = useLocationCard(props.id);
 
 
     let img;
-    switch (props.location.type) {
+    switch (props.type) {
         case "Planet":
             img = planet;
             break;
@@ -38,21 +38,16 @@ const LocationCard = (props) => {
             img = resort;
             break;
         default:
-            img = planet
+            img=planet
             break;
     }
-
+    
 
     const content = <>
-        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} />
-        <div className="locationCardContainer">
-            <img className="locationCardImage" src={img} alt={props.location.name}></img>
-            <div className="locationData">
-                <div className='locationName'>Name:&nbsp;{props.location.name}</div>
-                <div className='locationDimension'>Dimension:&nbsp;{props.location.dimension}</div>
-                {/* <div className='residents'>Resident(s):&nbsp;{props.location.residents}</div> */}
-            </div>
-        </div>
+        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>
+        <img className="locationImage" src={img} alt={props.name}></img>
+        <div className='locationName'>{props.name}</div>
+        <div className='locationDimension'>{props.dimension}</div>
     </>
     return content
 }

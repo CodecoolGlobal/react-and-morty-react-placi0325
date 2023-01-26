@@ -14,7 +14,7 @@ function App () {
     home: <Home setContent={setContent} />,
     characters: <CharacterList setContent={setContent} />,
     locations: <LocationList setContent={setContent} setLocationCondition={setLocationCondition} locationCondition={locationCondition} />,
-    locationCard: <LocationCard setContent={setContent} setLocationCondition={setLocationCondition} />,
+    locationCard: <LocationCard setContent={setContent} setLocationCondition={setLocationCondition} id={locationCondition[0]} type={locationCondition[1]} name={locationCondition[2]} dimension={locationCondition[3]}/>,
   };
 
   return (<div className="container">
