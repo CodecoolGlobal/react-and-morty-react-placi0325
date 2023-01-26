@@ -14,7 +14,7 @@ const CharacterList = (props) => {
 
     if (props.characterCondition === "allCharacter") {
         return (<>
-            <Header setContent={props.setContent}/>
+            <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>
             <PageSwitcher max={42} setPage={setCharacterPage} pageNumber={characterPage} />
             <div className="characterListContainer">
                 {characters && characters.results.map((char)=>(<CharacterListItem character={char} setContent={props.setContent} setCharacterCondition={props.setCharacterCondition}/>))}
@@ -22,7 +22,7 @@ const CharacterList = (props) => {
         </>)
     } else if (singleCharacter.name) {
         console.log("khkjhj",singleCharacter)
-        return <CharacterCard setContent={props.setContent} character={singleCharacter} setCharacterCondition={props.setCharacterCondition}/>
+        return <CharacterCard setContent={props.setContent} character={singleCharacter} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>
     }
 
 }

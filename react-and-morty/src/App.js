@@ -12,8 +12,8 @@ function App () {
 
   const contentOptions = {
     home: <Home setContent={setContent} />,
-    characters: <CharacterList setContent={setContent} setCharacterCondition={setCharacterCondition} characterCondition={characterCondition} />,
-    locations: <LocationList setContent={setContent} setLocationCondition={setLocationCondition} locationCondition={locationCondition} />,
+    characters: <CharacterList setContent={setContent} setCharacterCondition={setCharacterCondition} setLocationCondition={setLocationCondition} characterCondition={characterCondition} />,
+    locations: <LocationList setContent={setContent} setCharacterCondition={setCharacterCondition} setLocationCondition={setLocationCondition} locationCondition={locationCondition} />,
   };
 
   return (<div className="container">
