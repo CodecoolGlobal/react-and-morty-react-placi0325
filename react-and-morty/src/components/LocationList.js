@@ -20,8 +20,8 @@ const LocationList = (props) => {
             <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} />
             <PageSwitcher max={7} setPage={setLocationPage} pageNumber={locationPage} />
             <div className='locations'>
-            {data && data.results.map((location)=>(<LocationListItem location={location} setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>))}
-        </div>
+                {data && data.results.map((location)=>(<LocationListItem location={location} setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>))}
+            </div>
         </>)
     } else {
         

@@ -8,8 +8,8 @@ import CharacterCard from "./CharacterCard"
 const CharacterList = (props) => {
     const [characterPage, setCharacterPage] = useState(1);
 
-    const characters = useCharacters(characterPage);
     let singleCharacter = useCharacterCard(props.characterCondition)
+    const characters = useCharacters(characterPage);
 
     if (props.characterCondition === "allCharacter") {
         return (<>
@@ -17,11 +17,13 @@ const CharacterList = (props) => {
             <PageSwitcher max={42} setPage={setCharacterPage} pageNumber={characterPage} />
             <div className="characterListContainer">
                 {characters && characters.results.map((char)=>
-                    (<CharacterListItem character={char}/>))}
+                    (<CharacterListItem character={char} setContent={props.setContent} setCharacterCondition={props.setCharacterCondition}/>))}
             </div>
         </>)
     } else {
-        return <CharacterCard setContent={props.setContent} character={singleCharacter} setLocationCondition={props.setLocationCondition}/>
+
+        console.log(singleCharacter)
+        return <CharacterCard setContent={props.setContent} character={singleCharacter} setCharacterCondition={props.setCharacterCondition}/>
     }
 
 }
