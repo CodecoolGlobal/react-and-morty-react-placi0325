@@ -5,7 +5,7 @@ const Header = (props) => {
         <div className='header'>
             <img className='header-logo' src={textlogo} alt='textlogo'></img>
             <div className='header-buttons'>
-                <button className='header-button' onClick={() => {props.setContent("home")}}>Home</button>
+                <button className='header-button' onClick={() => {props.setContent("home");props.setLocationCondition("allCharacter")}}>Home</button>
                 <button className='header-button' onClick={() => {props.setContent("characters")}}>Characters</button>
                 <button className='header-button' onClick={() => {props.setContent("locations")}}>Locations</button>
             </div>

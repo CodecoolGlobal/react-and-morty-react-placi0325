@@ -5,9 +5,14 @@ import menagerie from '../img/menagerie.jpg'
 import resort from '../img/resort.webp'
 import tv from '../img/tv.jpg'
 import spacestation from '../img/spacestation.webp'
+import { useLocationCard } from "../api/useData";
+import { useState } from 'react';
+import Header from "./Header"
 
+const LocationCard = (props) => {
+    
+    //let data = useLocationCard(props.id);
 
-const LocationListItem = (props) => {
 
     let img;
     switch (props.location.type) {
@@ -36,15 +41,14 @@ const LocationListItem = (props) => {
             img=planet
             break;
     }
-    const content = <div className='locationListItem'>
-        <img className="locationImage" src={img} alt={props.location.name} onClick={() => {
-            props.setLocationCondition(props.location.id)
-            console.log(props.location.id)
-            }}></img>
-        <div className='locationName'>{props.location.name}</div>
-    </div>;
+    
 
+    const content = <>
+        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>
+        <img className="locationImage" src={img} alt={props.location.name}></img>
+        <div className='locationName'>{props.location.name}</div>
+        <div className='locationDimension'>{props.location.dimension}</div>
+    </>
     return content
 }
-
-export default LocationListItem
+export default LocationCard
