@@ -9,12 +9,12 @@ import LocationCard from "./components/LocationCard";
 function App () {
   const [content, setContent] = useState("home");
   const [locationCondition, setLocationCondition] = useState("allCharacter")
+  const [characterCondition, setCharacterCondition] = useState("allCharacter")
 
   const contentOptions = {
     home: <Home setContent={setContent} />,
-    characters: <CharacterList setContent={setContent} />,
+    characters: <CharacterList setContent={setContent} setCharacterCondition={setCharacterCondition} characterCondition={characterCondition} />,
     locations: <LocationList setContent={setContent} setLocationCondition={setLocationCondition} locationCondition={locationCondition} />,
-    locationCard: <LocationCard setContent={setContent} setLocationCondition={setLocationCondition} />,
   };
 
   return (<div className="container">

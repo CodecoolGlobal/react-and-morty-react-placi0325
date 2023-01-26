@@ -26,7 +26,7 @@ const LocationList = (props) => {
     } else {
         
         console.log(singleCharacter)
-        return <LocationCard setContent={props.setContent} location={singleCharacter}/>
+        return <LocationCard setContent={props.setContent} location={singleCharacter} setLocationCondition={props.setLocationCondition}/>
     }
     
 }
