@@ -157,3 +157,30 @@ body {
     padding-top: 10px;
     padding-bottom: 10px;
 }
+
+.locationCardContainer {
+    grid-column: span 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 150px;
+    margin-left: 500px;
+    margin-right: 500px;
+    background-color: #12B0C9;
+    color:black;
+    padding: 5px;
+    border: 5px solid #D2E054;
+    border-radius: 1em;
+    font-size: large;
+}
+
+.locationCardImage {
+    border-radius: 50%;
+    border: 5px solid #D2E054;
+    width: 450px;
+    justify-content: center;
+}
+
+.locationData {
+    padding-top: 30px;
+}
