@@ -20,7 +20,7 @@ const LocationList = (props) => {
                 {data && data.results.map((location)=>(<LocationListItem location={location} setContent={props.setContent} setLocationCondition={props.setLocationCondition}/>))}
             </div>
         </>)
-    } else {
+    } else if (singleLocation.name) {
         
         console.log(singleLocation)
         return <LocationCard setContent={props.setContent} location={singleLocation} setCharacterCondition={props.setCharacterCondition} setLocationCondition={props.setLocationCondition}/>

@@ -9,7 +9,7 @@ const CharacterList = (props) => {
     const [characterPage, setCharacterPage] = useState(1);
 
     console.log("char cond.",props.characterCondition)
-    let singleCharacter = useCharacterCard(props.characterCondition)
+    let singleCharacter = useCharacterCard(`https://rickandmortyapi.com/api/character/${props.characterCondition}`)
     let characters = useCharacters(characterPage);
 
     if (props.characterCondition === "allCharacter") {
