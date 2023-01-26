@@ -18,3 +18,11 @@ export const useLocations = (pageNumber) => {
     return locations;
 }
 
+export const useLocationCard = (id) => {
+    const [locationCard, setUrl] = useFetch(`https://rickandmortyapi.com/api/location/`+id)
+    useEffect(()=>{
+        setUrl(`https://rickandmortyapi.com/api/location/`+id)
+    },[id])
+    return locationCard;
+}
+

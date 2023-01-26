@@ -4,14 +4,17 @@ import { useCharacters, useLocations } from "./api/useData";
 import Home from "./components/Home";
 import LocationList from "./components/LocationList";
 import CharacterList from "./components/CharacterList";
+import LocationCard from "./components/LocationCard";
 
 function App () {
   const [content, setContent] = useState("home");
+  const [locationCondition, setLocationCondition] = useState("allCharacter")
 
   const contentOptions = {
     home: <Home setContent={setContent} />,
     characters: <CharacterList setContent={setContent} />,
-    locations: <LocationList setContent={setContent} />,
+    locations: <LocationList setContent={setContent} setLocationCondition={setLocationCondition} locationCondition={locationCondition} />,
+    locationCard: <LocationCard setContent={setContent} setLocationCondition={setLocationCondition} />,
   };
 
   return (<div className="container">
