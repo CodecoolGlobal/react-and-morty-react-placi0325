@@ -200,3 +200,16 @@ body {
     border-radius: 1em;
     font-size: large;
 }
+
+.smallCharacterImage {
+    height: 25px;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.residentName {
+    display: flex;
+    align-items: center;
+    padding-bottom: 5px;
+    
+}

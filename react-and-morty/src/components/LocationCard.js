@@ -6,6 +6,7 @@ import resort from '../img/resort.webp'
 import tv from '../img/tv.jpg'
 import spacestation from '../img/spacestation.webp'
 import Header from "./Header"
+import Resident from "./Resident"
 
 const LocationCard = (props) => {
 
@@ -49,7 +50,8 @@ const LocationCard = (props) => {
                 <div className='locationName'>Name:&nbsp;{props.location.name}</div>
                 <div>Type:&nbsp;{props.location.type}</div>
                 <div className='locationDimension'>Dimension:&nbsp;{props.location.dimension}</div>
-                {/* <div className='residents'>Resident(s):&nbsp;{props.location.residents}</div> */}
+                <div>Residents:</div>
+                {props.location.residents.map((resident)=> (<Resident link={resident} setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>))}
             </div>
         </div>
     </>

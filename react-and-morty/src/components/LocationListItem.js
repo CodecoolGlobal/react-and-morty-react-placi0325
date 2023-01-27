@@ -39,7 +39,6 @@ const LocationListItem = (props) => {
     const content = <div className='locationListItem'>
         <img className="locationImage" src={img} alt={props.location.name} onClick={() => {
             props.setLocationCondition(props.location.id)
-            console.log(props.location.id)
             }}></img>
         <div className='locationName'>{props.location.name}</div>
     </div>;
