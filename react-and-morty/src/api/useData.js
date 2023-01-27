@@ -38,7 +38,6 @@ export const useLocationCard = (id) => {
 export const useCharacterCard = (url) => {
     const [characterCard, setUrl] = useFetch(url)
     useEffect(()=>{
-        console.log('fetching id:',url)
         setUrl(url)
     },[url])
     return characterCard;

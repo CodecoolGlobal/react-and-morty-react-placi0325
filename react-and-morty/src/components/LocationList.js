@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 const LocationList = (props) => {
     const [locationPage, setLocationPage] = useState(1);
 
-    console.log("loc cond.",props.locationCondition)
+
     let singleLocation = useLocationCard(props.locationCondition)
     let data = useLocations(locationPage);
 
@@ -21,8 +21,6 @@ const LocationList = (props) => {
             </div>
         </>)
     } else if (singleLocation.name) {
-        
-        console.log(singleLocation)
         return <LocationCard setContent={props.setContent} location={singleLocation} setCharacterCondition={props.setCharacterCondition} setLocationCondition={props.setLocationCondition}/>
     }
     
