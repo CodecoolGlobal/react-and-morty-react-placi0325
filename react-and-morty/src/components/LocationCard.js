@@ -1,60 +1,46 @@
-import planet from "../img/planet.jpg"
-import cluster from '../img/cluster.jpg'
-import dream from '../img/dream.jpg'
-import menagerie from '../img/menagerie.jpg'
-import resort from '../img/resort.webp'
-import tv from '../img/tv.jpg'
-import spacestation from '../img/spacestation.webp'
-import Header from "./Header"
-import Resident from "./Resident"
+import { useParams } from "react-router-dom";
+import { useEffect, useState, useRef } from "react";
+import Header from "./Header";
+import Resident from "./Resident";
+import { useLocationCard } from "../api/useData";
+import getImage from "../api/getImage";
 
 const LocationCard = (props) => {
+  const { id } = useParams();
+  const [location, setLocation] = useState(null);
+  const locationPromise = useLocationCard(id);
+  const imgRef = useRef(null); // Using useRef for img
 
-    //let data = useLocationCard(props.id);
+  useEffect(() => {
+    locationPromise.then((location) => {
+      setLocation(location);
+      imgRef.current = getImage(location.type);
+    });
+  }, []);
 
-
-    let img;
-    switch (props.location.type) {
-        case "Planet":
-            img = planet;
-            break;
-        case "Cluster":
-            img = cluster;
-            break;
-        case "Dream":
-            img = dream;
-            break;
-        case "Space station":
-            img = spacestation;
-            break;
-        case "Menagerie":
-            img = menagerie;
-            break;
-        case "TV":
-            img = tv;
-            break;
-        case "Resort":
-            img = resort;
-            break;
-        default:
-            img = planet
-            break;
-    }
-
-
-    const content = <>
-        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>
-        <div className="locationCardContainer">
-            <img className="locationCardImage" src={img} alt={props.location.name}></img>
+  const content = (
+    <>
+      <Header />
+      <div className="locationCardContainer">
+        {location !== null ? (
+          <>
+            <img className="locationCardImage" src={imgRef.current} alt={location.name}></img>
             <div className="locationData">
-                <div className='locationName'>Name:&nbsp;{props.location.name}</div>
-                <div>Type:&nbsp;{props.location.type}</div>
-                <div className='locationDimension'>Dimension:&nbsp;{props.location.dimension}</div>
-                <div>Residents:</div>
-                {props.location.residents.map((resident)=> (<Resident link={resident} setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>))}
+              <div className="locationName">Name:&nbsp;{location.name}</div>
+              <div>Type:&nbsp;{location.type}</div>
+              <div className="locationDimension">
+                Dimension:&nbsp;{location.dimension}
+              </div>
+              <div>Residents:</div>
+              {location.residents.map((resident_url) => (
+                <Resident resident_url={resident_url} key={resident_url}/>
+              ))}
             </div>
-        </div>
+          </>
+        ) : null}
+      </div>
     </>
-    return content
-}
-export default LocationCard
+  );
+  return content;
+};
+export default LocationCard;

@@ -1,17 +1,33 @@
-import Header from "./Header"
+import { useCharacterCard } from "../api/useData";
+import { useParams } from "react-router-dom";
+import Header from "./Header";
+import { useState, useEffect } from "react";
 
 const CharacterCard = (props) => {
-    console.log('character card:',props.character)
+  const { id } = useParams();
+  const [character, setCharacter] = useState(null);
+  const characterPromise = useCharacterCard(id);
 
-    const content = <div className="characterCard">
-        <Header setContent={props.setContent} setLocationCondition={props.setLocationCondition} setCharacterCondition={props.setCharacterCondition}/>
-        <img className="characterImage" src={props.character.image} alt={props.character.name}></img>
-        <div>{props.character.name}</div>
-        <div>{props.character.species}</div>
-        <div>origin: {props.character.origin.name}</div>
-        <div>location: {props.character.location.name}</div>
-        <div>number of appearances: {props.character.episode.length}</div>
+  useEffect(() => {
+    characterPromise.then((character) => {
+      setCharacter(character);
+    })
+  }, [])
+
+  return (
+    <div className="characterCard">
+      <Header />
+      {character !== null ? (
+        <>
+          <img className="characterImage" src={character.image} alt={character.name} />
+          <div>{character.name}</div>
+          <div>{character.species}</div>
+          <div>origin: {character.origin.name}</div>
+          <div>location: {character.location.name}</div>
+          <div>number of appearances: {character.episode.length}</div>
+        </>
+      ) : null}
     </div>
-    return content
-}
-export default CharacterCard
+  );
+};
+export default CharacterCard;
