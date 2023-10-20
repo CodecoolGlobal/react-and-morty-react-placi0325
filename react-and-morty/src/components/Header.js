@@ -26,6 +26,14 @@ const Header = (props) => {
         <button
           className="header-button"
           onClick={() => {
+            navigate("/login");
+          }}
+        >
+          Login
+        </button>
+        <button
+          className="header-button"
+          onClick={() => {
             navigate("/characters");
           }}
         >

@@ -9,6 +9,7 @@ import CharacterList from './pages/CharacterList';
 import LocationList from './pages/LocationList';
 import CharacterCard from './components/CharacterCard';
 import LocationCard from './components/LocationCard';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/login",
-        element: <div />
+        element: <Login />
       }
     ]
   }
