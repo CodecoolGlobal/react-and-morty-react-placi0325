@@ -34,6 +34,14 @@ const Header = (props) => {
         <button
           className="header-button"
           onClick={() => {
+            navigate("/signup");
+          }}
+        >
+          Sign up
+        </button>
+        <button
+          className="header-button"
+          onClick={() => {
             navigate("/characters");
           }}
         >

@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const Login = () => {
   const navigate = useNavigate();
-  const {client, setClient} = useClient();
+  const { client, login } = useClient();
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -23,7 +23,7 @@ const Login = () => {
 
   const handleLogin = (user) => {
     loginUser(user).then((data) => {
-      setClient(data)
+      login(data);
       navigate("/");
     });
   };
@@ -38,7 +38,17 @@ const Login = () => {
       headers: headers,
       body: JSON.stringify(user),
     };
-    return fetch("/login", fetchOptions);
+    return fetch("/login", fetchOptions).then(function (res) {
+      if (res.status === 404) {
+        throw new Error("Username not found!");
+      } else if (res.status === 401) {
+        throw new Error("Wrong password!");
+      } else {
+        const token = res.headers.get("Authorization");
+        localStorage.setItem("Token", token);
+        //return res.json(); // Return the response data instead of the token
+      }
+    });
   };
 
   return (

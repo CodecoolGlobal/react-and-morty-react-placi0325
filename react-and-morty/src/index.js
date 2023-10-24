@@ -1,15 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
+import React from "react";
+import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import './index.css';
+import "./index.css";
 import "./App.css";
-import * as serviceWorker from './serviceWorker';
-import Home from './pages/Home';
-import CharacterList from './pages/CharacterList';
-import LocationList from './pages/LocationList';
-import CharacterCard from './components/CharacterCard';
-import LocationCard from './components/LocationCard';
-import Login from './pages/Login';
+import * as serviceWorker from "./serviceWorker";
+import Home from "./pages/Home";
+import CharacterList from "./pages/CharacterList";
+import LocationList from "./pages/LocationList";
+import CharacterCard from "./components/CharacterCard";
+import LocationCard from "./components/LocationCard";
+import Login from "./pages/Login";
+import { ClientContextProvider } from "./context/ClientContext";
+import SignUp from "./pages/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -18,36 +20,42 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Home />
+        element: <Home />,
       },
       {
         path: "/characters",
-        element: <CharacterList />
+        element: <CharacterList />,
       },
       {
         path: "/characters/:id",
-        element: <CharacterCard />
+        element: <CharacterCard />,
       },
       {
         path: "/locations",
-        element: <LocationList />
+        element: <LocationList />,
       },
       {
         path: "/locations/:id",
-        element: <LocationCard />
+        element: <LocationCard />,
       },
       {
         path: "/login",
-        element: <Login />
-      }
-    ]
-  }
-  ]);
+        element: <Login />,
+      },
+      {
+        path: "/signup",
+        element: <SignUp />,
+      },
+    ],
+  },
+]);
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router}/>
+    <ClientContextProvider>
+      <RouterProvider router={router} />
+    </ClientContextProvider>
   </React.StrictMode>
 );
 
