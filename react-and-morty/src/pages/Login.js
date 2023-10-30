@@ -38,10 +38,10 @@ const Login = () => {
       headers: headers,
       body: JSON.stringify(user),
     };
-    return fetch("/login", fetchOptions).then(function (res) {
+    return fetch("/auth/login-user", fetchOptions).then(function (res) {
       if (res.status === 404) {
         throw new Error("Username not found!");
-      } else if (res.status === 401) {
+      } else if (res.status === 401) { 
         throw new Error("Wrong password!");
       } else {
         const token = res.headers.get("Authorization");
@@ -62,7 +62,7 @@ const Login = () => {
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input name="password" id="password" />
+          <input name="password" id="password" type="password"/>
         </div>
         <div className="buttonContainer">
           <button className="button" type="submit">

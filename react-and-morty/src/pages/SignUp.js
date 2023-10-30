@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 
 const createNewUser = (user) => {
+    console.log(user);
     return fetch("/users", {
       method: "POST",
       headers: {
@@ -49,7 +50,7 @@ const SignUp = () => {
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input name="password" id="password" />
+          <input name="password" id="password" type="password"/>
         </div>
         <div className="buttonContainer">
           <button className="button" type="submit">
