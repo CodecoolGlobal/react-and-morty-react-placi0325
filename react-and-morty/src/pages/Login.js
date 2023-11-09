@@ -4,7 +4,7 @@ import Header from "../components/Header";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { client, login } = useClient();
+  const { client, setClient } = useClient();
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -22,8 +22,8 @@ const Login = () => {
   };
 
   const handleLogin = (user) => {
-    loginUser(user).then((data) => {
-      login(data);
+    loginUser(user).then((token) => {
+      setClient(token);
       navigate("/");
     });
   };
@@ -46,7 +46,7 @@ const Login = () => {
       } else {
         const token = res.headers.get("Authorization");
         localStorage.setItem("Token", token);
-        //return res.json(); // Return the response data instead of the token
+        return token; 
       }
     });
   };

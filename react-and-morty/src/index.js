@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import "./App.css";
 import * as serviceWorker from "./serviceWorker";
@@ -13,7 +13,7 @@ import Login from "./pages/Login";
 import { ClientContextProvider } from "./context/ClientContext";
 import SignUp from "./pages/SignUp";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     errorElement: <div />,

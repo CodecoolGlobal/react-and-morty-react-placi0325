@@ -1,8 +1,13 @@
+import { useEffect } from "react";
+import { useClient } from "../context/ClientContext";
 import textlogo from "../img/textlogo.png";
 import { useNavigate } from "react-router-dom";
 
 const Header = (props) => {
   const navigate = useNavigate();
+  const { client, setClient } = useClient();
+
+  console.log(client);
 
   return (
     <div className="header">
@@ -23,22 +28,37 @@ const Header = (props) => {
         >
           Home
         </button>
-        <button
-          className="header-button"
-          onClick={() => {
-            navigate("/login");
-          }}
-        >
-          Login
-        </button>
-        <button
-          className="header-button"
-          onClick={() => {
-            navigate("/signup");
-          }}
-        >
-          Sign up
-        </button>
+        {!client && (
+          <button
+            className="header-button"
+            onClick={() => {
+              navigate("/login");
+            }}
+          >
+            Login
+          </button>
+        )}
+        {!client && (
+          <button
+            className="header-button"
+            onClick={() => {
+              navigate("/signup");
+            }}
+          >
+            Signup
+          </button>
+        )}
+        {client && (
+          <button
+            className="header-button"
+            onClick={() => {
+              setClient(null);
+              navigate("/");
+            }}
+          >
+            Logout
+          </button>
+        )}
         <button
           className="header-button"
           onClick={() => {
