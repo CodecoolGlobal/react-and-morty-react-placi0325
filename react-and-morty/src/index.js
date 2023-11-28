@@ -12,11 +12,12 @@ import LocationCard from "./components/LocationCard";
 import Login from "./pages/Login";
 import { ClientContextProvider } from "./context/ClientContext";
 import SignUp from "./pages/SignUp";
+import ErrorPage from "./pages/ErrorPage";
 
 const router = createHashRouter([
   {
     path: "/",
-    errorElement: <div />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

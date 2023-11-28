@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Header from "./Header";
 import { useState, useEffect } from "react";
 
-const CharacterCard = (props) => {
+const CharacterCard = () => {
   const { id } = useParams();
   const [character, setCharacter] = useState(null);
   const characterPromise = useCharacterCard(id);

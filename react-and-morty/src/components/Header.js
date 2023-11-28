@@ -3,11 +3,9 @@ import { useClient } from "../context/ClientContext";
 import textlogo from "../img/textlogo.png";
 import { useNavigate } from "react-router-dom";
 
-const Header = (props) => {
+const Header = () => {
   const navigate = useNavigate();
-  const { client, setClient } = useClient();
-
-  console.log(client);
+  const { client, setClient, logout } = useClient();
 
   return (
     <div className="header">
@@ -52,7 +50,7 @@ const Header = (props) => {
           <button
             className="header-button"
             onClick={() => {
-              setClient(null);
+              logout();
               navigate("/");
             }}
           >

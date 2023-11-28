@@ -41,12 +41,12 @@ const Login = () => {
     return fetch("/auth/login-user", fetchOptions).then(function (res) {
       if (res.status === 404) {
         throw new Error("Username not found!");
-      } else if (res.status === 401) { 
+      } else if (res.status === 401) {
         throw new Error("Wrong password!");
       } else {
-        const token = res.headers.get("Authorization");
+        const token = res.headers.get("Authorization").substring(7);
         localStorage.setItem("Token", token);
-        return token; 
+        return token;
       }
     });
   };
@@ -57,12 +57,12 @@ const Login = () => {
       <form className="loginForm" onSubmit={onSubmit}>
         <h1>Log in</h1>
         <div>
-          <label htmlFor="username">Username:</label>
-          <input name="username" id="username" />
+          <label htmlFor="email">Username:</label>
+          <input name="email" id="email" />
         </div>
         <div>
           <label htmlFor="password">Password:</label>
-          <input name="password" id="password" type="password"/>
+          <input name="password" id="password" type="password" />
         </div>
         <div className="buttonContainer">
           <button className="button" type="submit">
