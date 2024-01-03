@@ -57,6 +57,17 @@ const Header = () => {
             Logout
           </button>
         )}
+        {client && (
+          <button
+            className="header-button"
+            onClick={() => {
+              logout();
+              navigate("/userpage");
+            }}
+          >
+            Userpage
+          </button>
+        )}
         <button
           className="header-button"
           onClick={() => {

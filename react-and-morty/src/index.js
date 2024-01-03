@@ -13,6 +13,7 @@ import Login from "./pages/Login";
 import { ClientContextProvider } from "./context/ClientContext";
 import SignUp from "./pages/SignUp";
 import ErrorPage from "./pages/ErrorPage";
+import UserPage from "./pages/UserPage";
 
 const router = createHashRouter([
   {
@@ -46,6 +47,10 @@ const router = createHashRouter([
       {
         path: "/signup",
         element: <SignUp />,
+      },
+      {
+        path: "/userpage",
+        element: <UserPage />,
       },
     ],
   },
